@@ -1,23 +1,30 @@
 import React from "react";
-import unsplash from "../api/unsplash";
+import axios from "axios";
 import SearchBar from "./SearchBar";
 import ImageList from "./ImageList";
 
 class App extends React.Component {
   state = { images: [], loading: "false" };
+
+  componentDidMount = async () => {
+    const response = await axios.get(
+      "https://trav4college-backend-assesment-abdussamadyisau.vercel.app/imageList"
+    );
+
+    this.setState({ images: response.data?.data, loading: "false" });
+  };
+
   onSearchSubmit = async (term) => {
     this.setState({ loading: "true" });
-    console.log("1st Attempt", this.state.attempt);
+    const response = await axios.get(
+      "https://trav4college-backend-assesment-abdussamadyisau.vercel.app/imageList"
+    );
 
-    console.log("2nd Attempt", this.state.loading);
-    const response = await unsplash.get("/search/photos", {
-      params: {
-        query: term,
-      },
-    });
+    const imageArray = response.data?.data.filter((image) =>
+      image.name.toLowerCase().includes(term.toLowerCase())
+    );
 
-    this.setState({ images: response.data.results, loading: "false" });
-    console.log("3rd attempt", this.state.loading);
+    this.setState({ images: imageArray, loading: "false" });
   };
   render() {
     return (

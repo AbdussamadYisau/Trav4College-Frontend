@@ -1,11 +1,10 @@
 .image-list {
-    display: grid;
-    grid-gap: 0px 10px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 10px;
-    
+  display: grid;
+  grid-gap: 0px 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 12px;
 }
 
 .image-list img {
-    width: 250px;
+  width: 250px;
 }
