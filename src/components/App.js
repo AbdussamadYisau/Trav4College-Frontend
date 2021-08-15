@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar";
 import ImageList from "./ImageList";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+// import "./App.css";
 
 class App extends React.Component {
   state = { images: [], loading: "false" };
@@ -34,13 +35,20 @@ class App extends React.Component {
         <div
           className="ui container"
           style={{
-            marginTop: "20px",
+            paddingTop: "20px",
             display: "flex",
             justifyContent: "space-between",
           }}
         >
-          <h1 className="ui blue header">Explore colleges and universities</h1>
-          <SearchBar onSubmit={this.onSearchSubmit} />
+          <h1
+            className="ui blue header "
+            style={{
+              width: "250px",
+            }}
+          >
+            Explore colleges and universities
+          </h1>
+          <SearchBar className="search-bar" onSubmit={this.onSearchSubmit} />
         </div>
         {this.state.loading === "true" ? (
           <>

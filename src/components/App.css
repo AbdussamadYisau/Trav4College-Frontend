@@ -1,0 +1,26 @@
+/* *:not(p) {
+  background-color: #d3d3d3;
+} */
+
+* {
+  background-color: #d3d3d3;
+}
+.headerStyle {
+  width: "250px";
+  color: "red";
+}
+
+.headerMenu {
+  padding-top: "20px";
+  display: "flex";
+  flex-direction: column !important;
+  justify-content: "space-between";
+}
+@media (min-width: 451px) {
+  .headerMenu {
+    padding-top: "20px";
+    display: "flex";
+    flex-direction: row !important;
+    justify-content: "space-between";
+  }
+}

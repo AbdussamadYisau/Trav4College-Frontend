@@ -20,14 +20,16 @@ class ImageCard extends React.Component {
   };
   render() {
     const { _id, name, imageLink } = this.props.image;
+    // style={{ gridRowEnd: `span ${this.state.spans}` }}
     return (
-      <div style={{ gridRowEnd: `span ${this.state.spans}` }}>
+      <div>
         <img ref={this.imageRef} key={_id} alt={name} src={imageLink} />
         <p
           style={{
             fontSize: "15px",
-            marginTop: "5px",
-            marginBottom: "10px",
+            marginTop: "-40px",
+            paddingBottom: "10px",
+            color: "white",
           }}
         >
           <strong>{name}</strong>
